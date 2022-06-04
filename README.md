@@ -70,7 +70,7 @@ List
 
 ###### <p align = "center">ArrayList는 index가 있고, LinkedList는 각 원소마다 앞, 뒤 원소의 위치값을 가지고 있다.</p>
 
-
+ArrayList
 ArrayList는 기본적으로 배열을 사용한다. 하지만 일반 배열과 차이점이 존재한다.
 
 일반 배열은 처음에 메모리를 할당할 때 크기를 지정해주어야 하지만,
