@@ -66,9 +66,10 @@ List
 
 <p align = "center">
  <img src = "https://blog.kakaocdn.net/dn/bxSQdR/btqTyBzXfTx/Jg0RdLWPPDZhnPv2ywDZ3k/img.png" height = "40%" width = "60%">
- </p>
-###### ArrayList는 index가 있고, LinkedList는 각 원소마다 앞, 뒤 원소의 위치값을 가지고 있다.
-<span style = "color:blue">ArrayList</span>
+</p>
+
+###### <p align = "center">ArrayList는 index가 있고, LinkedList는 각 원소마다 앞, 뒤 원소의 위치값을 가지고 있다.</p>
+
 
 ArrayList는 기본적으로 배열을 사용한다. 하지만 일반 배열과 차이점이 존재한다.
 
@@ -94,7 +95,7 @@ ArrayList는 각 데이터의  index를 가지고 있고 무작위 접근이 가
 
  
 
-<span style = "color:blue">LinkedList</span>
+<span style = "background-color:yellow">LinkedList</span>
 
 LinkedList는 내부적으로 양방향의 연결 리스트로 구성되어 있어 참조하려는 원소에 따라 처음부터 정방향 또는 역순으로 순회 가능
 
@@ -243,6 +244,6 @@ API가 많아질수록 복잡성은 증가하기 때문에 다형성은 유용�
 ## Q.9 자바에서 멀티쓰레드를 구현하는 방법은?
 멀티쓰레드를 구현하는 방법으로는 
 
--Thread 클래스를 상속하는 방법 --> 단일 상속만 된다는 단점이 있다. 
+- Thread 클래스를 상속하는 방법 --> 단일 상속만 된다는 단점이 있다. 
 
 - Runnable 인터페이스를 상속하는 방법 --> 다중 상속이 된다는 장점이 있다.
