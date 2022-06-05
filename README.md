@@ -247,3 +247,33 @@ API가 많아질수록 복잡성은 증가하기 때문에 다형성은 유용�
 - Thread 클래스를 상속하는 방법 --> 단일 상속만 된다는 단점이 있다. 
 
 - Runnable 인터페이스를 상속하는 방법 --> 다중 상속이 된다는 장점이 있다.
+
+## Q.10 접근제어자에 대해서 설명하시오
+접근제어자는 객체지향 프로그래밍에서 클래스의 멤버 변수 또는 메소드에 설정하는 키워드로 접근 영역을 제한하는데 사용합니다. public, default, protected, private이 존재합니다.
+
+- Default : 기본적인 값으로 따로 설정하지 않는 경우 입니다. 같은 패키지 내에서만 접근이 가능합니다.
+
+- Public : 접근 제한이 없습니다.
+
+- Protected : 같은 패키지 내 혹은 다른 패키지의 자식 클래스에서 접근이 가능함을 의미합니다.
+
+- Private : 같은 클래스 내에서만 접근이 가능합니다. 
+
+## Q.11 Wrapper 클래스에 대해서 설명하시오
+
+Primitive 타입(기본 자료형) 으로 표현할 수 있는 간단한 데이터를 객체로 만들어야 할 경우가 있는데 그러한 기능을 지원하는 클래스를 뜻하며 각 기본형 타입에 대응하는 Wrapper 클래스는 다음과 같다.
+
+<center>
+
+|<center>기본 자료형</center>|<center>Wrapper 클래스</center>|
+|:---:|:---:|
+|<center>byte </center>|<center>Byte</center>|
+|<center>short </center>|<center>Short</center>|
+|<center>int</center>|<center>Integer</center>|
+|<center>long</center>|<center>Long</center>|
+|<center>char</center>|<center>Character</center>|
+|<center>float</center>|<center>Float</center>|
+|<center>double</center>|<center>Double</center>|
+|<center>boolean</center>|<center>Boolean</center>|
+
+</center>
