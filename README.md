@@ -263,7 +263,7 @@ API가 많아질수록 복잡성은 증가하기 때문에 다형성은 유용�
 
 Primitive 타입(기본 자료형) 으로 표현할 수 있는 간단한 데이터를 객체로 만들어야 할 경우가 있는데 그러한 기능을 지원하는 클래스를 뜻하며 각 기본형 타입에 대응하는 Wrapper 클래스는 다음과 같다.
 
-<center>
+<p align = "center">
 
 |<center>기본 자료형</center>|<center>Wrapper 클래스</center>|
 |:---:|:---:|
@@ -276,4 +276,4 @@ Primitive 타입(기본 자료형) 으로 표현할 수 있는 간단한 데이�
 |<center>double</center>|<center>Double</center>|
 |<center>boolean</center>|<center>Boolean</center>|
 
-</center>
+</p>
