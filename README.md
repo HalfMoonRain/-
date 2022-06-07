@@ -308,6 +308,57 @@ Primitive 타입(기본 자료형) 으로 표현할 수 있는 간단한 데이�
 
  인터페이스는 추상 클래스보다 추상화 정도가 높은 상태를 정의할 때 사용합니다. 인터페이스는 기능의 재정의에 큰 의미를 두고 있습니다. 멤버 변수와 일반 메소드를 가질 수 없으며 오직 상수와 추상 메소드만을 선언할 수 있습니다. implements 키워드를 이용하여 상속을 진행하며 자식 클래스에서 반드시 메소드를 재정의해야합니다. 그 밖에 인터페이스는 클래스에서 지원하지 않는 다중상속이 가능합니다.
 
+## Q.14 자바의 메모리 구조에 대하여 설명하시오.
+JVM
 
+JVM 메모리 구조를 설명하기 전에 JVM이 무엇인지 알아야 합니다. JVM은 Java Virtual Machine의 약자로, 자바 가상 머신이라고 부릅니다. 그리고 자바와 운영체제 사이에서 중개자 역할을 수행하며, 자바가 운영체제에 구애 받지 않고 프로그램을 실행할 수 있도록 도와줍니다. 또한, 가비지 컬렉터를 사용한 메모리 관리도 자동으로 수행하며, 다른 하드웨어와 다르게 레지스터 기반이 아닌 스택 기반으로 동작합니다.
 
+ 
 
+아래는 자바 프로그램의 실행 단계입니다.
+<p align = "center">
+ <img src = "https://blog.kakaocdn.net/dn/bKvBUn/btrD5RXRY5p/a6lmfS3P4n5LDhp17kezMK/img.png" height = "40%" width = "60%">
+</p>
+
+1. Source Code (.java) 파일을 Java Compiler를 통해서 Byte Code(.Class)파일로 변환한다. (컴퓨터가 이해할 수 있는 코드로 변환)
+2. Byte Code로 변환된 파일을 JVM의 Class Loader 로 보낸다.
+3. Class Loader는 말 그대로 Class 파일을 불러와서 메모리에 저장하는 역할을 한다.
+4. Execution Engine 은 Class Loader에 저장된 Byte Code를 명령어 단위로 분류하여 하나씩 실행하게 하는 엔진이다.
+5. Garbage Collector 는 사용하지 않거나 필요없는 객체들을 메모리에서 소멸시키는 역할을 한다.
+6. Runtime Data Area (Memory Area) 는 JVM이 프로그램을 수행하기위해 운영체제로부터 할당받은 메모리 공간이다.
+   이때 Runtime Data Area는 다음과 같은 구조를 갖는다.
+ 
+<p align = "center">
+ <img src = "https://blog.kakaocdn.net/dn/bnT9xW/btrDWKMqaKa/ms8uVlIS1MoyHSUP1Kj1ak/img.png" height = "40%" width = "60%">
+</p>
+
+1) Method Area
+
+- JVM이 실행되면서 생기는 공간이다.
+- Class 정보, 전역변수 정보, Static 변수 정보가 저장되는 공간이다.
+- Runtime Constant Pool 에는 말 그대로 '상수' 정보가 저장되는 공간이다.
+- 모든 스레드에서 정보가 공유된다.
+
+2) Heap
+
+- new 연산자로 생성된 객체, Array와 같은 동적으로 생성된 데이터가 저장되는 공간
+- Heap에 저장된 데이터는 Garbage Collector 가 처리하지 않는한 소멸되지 않는다.
+- Reference Type 의 데이터가 저장되는 공간
+- 모든 스레드에서 정보가 공유된다.
+
+3) Stack
+
+- 지역변수, 메소드의 매개변수와 같이 잠시 사용되고 필요가 없어지는 데이터가 저장되는 공간
+- Last In First Out, 나중에 들어온 데이터가 먼저 나간다
+- 만약, 지역변수 이지만 Reference Type일 경우에는 Heap 에 저장된 데이터의 주소값을 Stack 에 저장해서 사용하게 된다.
+- 스레드마다 하나씩 존재한다.
+
+4) PC Register
+
+- 스레드가 생성되면서 생기는 공간
+- 스레드가 어느 명령어를 처리하고 있는지 그 주소를 등록한다.
+- JVM이 실행하고 있는 현재 위치를 저장하는 역할
+
+5) Native Method Stack
+
+- Java 가 아닌 다른 언어 (C, C++) 로 구성된 메소드를 실행이 필요할 때 사용되는 공간
